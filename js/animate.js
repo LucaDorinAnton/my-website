@@ -13,8 +13,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }));
 
 
+    /**
+     * Once the animation finished, KUTE will have put a transform on the
+     * background divs. If the the viewport is zoomed in or out, because
+     * the transform is in pixels, the background will scale awkwardly.
+     * Replace the transform with an absolute position, and the background
+     * will not scale on zoom anymore.
+     * 
+     */
+    function clear_transform() {
+        bg_divs.map(e => e.style = 'left: 0px');
+    }
+
+
     function run_next_animation(index) {
-        if(index >= tweens.length) return;
+        if(index >= tweens.length) {
+            clear_transform()
+            return;
+        }
 
         tweens[index].start()
 
