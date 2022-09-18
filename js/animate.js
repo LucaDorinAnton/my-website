@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
      * Replace the transform with an absolute position, and the background
      * will not scale on zoom anymore.
      * 
+     * This will still break if the user zooms during the animation.
+     * 
      */
     function clear_transform() {
         bg_divs.map(e => e.style = 'left: 0px');
