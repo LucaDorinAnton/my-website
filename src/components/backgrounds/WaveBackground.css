@@ -1,0 +1,27 @@
+
+.background-layer1 {
+    background: url(/src/assets/images/vector/layer1.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    z-index: -3;
+  }
+  
+  .background-layer2 {
+    background: url(/src/assets/images/vector/layer2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    z-index: -2;
+  }
+  
+  .background-layer3 {
+    background: url(/src/assets/images/vector/layer3.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    z-index: -1;
+  }

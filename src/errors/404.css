@@ -1,0 +1,12 @@
+.errorSection {
+    height: 100%;
+    font-size: 4em; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+.text-sm {
+    font-size: 0.5em
+}

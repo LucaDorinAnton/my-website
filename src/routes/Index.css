@@ -1,0 +1,11 @@
+.indexHeading {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 100px;
+    font-size: 6em;
+    letter-spacing: 0.05em;
+}
+  
