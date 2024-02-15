@@ -18,4 +18,15 @@ class Strings {
   static const String exploreA3DWorld =
       'Explore a 3D world to discover parts of the CV. Suitable for everyone but especially creative types';
   static const String viewExperienceCV = 'View Experience CV';
+  static const String phoneNumber = 'Phone number';
+  static const String phoneNumberNo = '+44 (0) 7842806822';
+  static const String email = 'Email';
+  static const String emailNo = 'lucadorinanton@gmail.com';
+  static const String linkedin = 'Linkedin';
+  static const String linkedinNo = 'linkedin.com/in/ldanton';
+  static const String github = 'GitHub';
+  static const String githubNo = 'github.com/LucaDorinAnton';
+  static const String location = 'Location';
+  static const String locationNo = 'London, UK';
+  static const String position = 'Full Stack Software Engineer';
 }

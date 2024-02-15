@@ -6,4 +6,5 @@ class Palette {
   static const Color darkOrange = Color(0xFFf7770e);
   static const Color pink = Color(0xFFf96f61);
   static const Color darkRed = Color(0xFFd4380e);
+  static const Color teal = Color(0xFF2aa8b1);
 }
