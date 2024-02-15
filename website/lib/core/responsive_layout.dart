@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ResonsiveLayout extends StatelessWidget {
+class ResponsiveLayout extends StatelessWidget {
   final Widget mobileScaffold;
   final Widget tabletScaffold;
   final Widget desktopScaffold;
 
-  const ResonsiveLayout({
+  const ResponsiveLayout({
     super.key,
     required this.mobileScaffold,
     required this.tabletScaffold,
