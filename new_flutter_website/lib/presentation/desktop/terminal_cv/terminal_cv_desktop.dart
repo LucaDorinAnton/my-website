@@ -84,13 +84,25 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  width: 800,
-                  height: 600,
-                  child: TerminalView(
-                    terminal,
-                    hardwareKeyboardOnly: true,
-                  ),
+                Stack(
+                  children: [
+                    Positioned.fill(
+                      child: Image.asset(
+                        'assets/images/galaxy.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 800,
+                      height: 400,
+                      child: TerminalView(
+                        terminal,
+                        padding: const EdgeInsets.all(10),
+                        hardwareKeyboardOnly: true,
+                        backgroundOpacity: 0.5,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
