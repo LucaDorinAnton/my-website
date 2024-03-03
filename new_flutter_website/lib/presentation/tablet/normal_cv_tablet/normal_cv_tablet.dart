@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:website/core/palette.dart';
 import 'package:website/core/strings.dart';
 import 'package:website/core/widgets/bullet_points.dart';
 import 'package:website/core/widgets/contact_section.dart';
 import 'package:website/core/widgets/cv_section.dart';
+import 'package:universal_html/html.dart' as html;
 
-class NormalCVDesktop extends StatelessWidget {
-  const NormalCVDesktop({super.key});
+class NormalCVTablet extends StatelessWidget {
+  const NormalCVTablet({super.key});
 
   void downloadFile(String url) {
     html.AnchorElement anchorElement = html.AnchorElement(href: url);
@@ -346,45 +346,33 @@ class NormalCVDesktop extends StatelessWidget {
                       thickness: 2,
                     ),
                     const SizedBox(height: 5),
-                    const Row(
-                      children: [
-                        Column(
-                          children: [
-                            BulletPoint(
-                              text: 'Python, JavaScript, Java, Scala',
-                              isExpanded: false,
-                            ),
-                            BulletPoint(
-                              text: 'HTML/CSS, ReactJS, Flutter',
-                              isExpanded: false,
-                            ),
-                            BulletPoint(
-                              text: 'SQL & NoSQL (Redis & MongoDB)',
-                              isExpanded: false,
-                            ),
-                            BulletPoint(
-                              text: 'Cloud – AWS, Terraform',
-                              isExpanded: false,
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            BulletPoint(
-                              text: 'English - C2',
-                              isExpanded: false,
-                            ),
-                            BulletPoint(
-                              text: 'German - C2',
-                              isExpanded: false,
-                            ),
-                            BulletPoint(
-                              text: 'Romanian - Native',
-                              isExpanded: false,
-                            ),
-                          ],
-                        ),
-                      ],
+                    const BulletPoint(
+                      text: 'Python, JavaScript, Java, Scala',
+                      isExpanded: false,
+                    ),
+                    const BulletPoint(
+                      text: 'HTML/CSS, ReactJS, Flutter',
+                      isExpanded: false,
+                    ),
+                    const BulletPoint(
+                      text: 'SQL & NoSQL (Redis & MongoDB)',
+                      isExpanded: false,
+                    ),
+                    const BulletPoint(
+                      text: 'Cloud - AWS, Terraform',
+                      isExpanded: false,
+                    ),
+                    const BulletPoint(
+                      text: 'English - C2',
+                      isExpanded: false,
+                    ),
+                    const BulletPoint(
+                      text: 'German - C2',
+                      isExpanded: false,
+                    ),
+                    const BulletPoint(
+                      text: 'Romanian - Native',
+                      isExpanded: false,
                     )
                   ],
                 ),

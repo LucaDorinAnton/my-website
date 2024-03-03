@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:website/core/palette.dart';
 import 'package:website/core/strings.dart';
-import 'package:website/presentation/desktop/terminal_cv/mock_repl.dart';
+import 'package:website/core/widgets/desktop_app_bar.dart';
+import 'package:website/presentation/desktop/terminal_cv_desktop/mock_repl.dart';
 import 'package:xterm/xterm.dart';
 
 class TerminalCVDesktop extends StatefulWidget {
@@ -14,7 +15,6 @@ class TerminalCVDesktop extends StatefulWidget {
 
 class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
   late Terminal terminal;
-  Color backgroundColor = Colors.white;
   late final MockRepl pty;
 
   @override
@@ -28,7 +28,11 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      appBar: AppBar(
+        flexibleSpace: const AppBarDesktop(),
+        backgroundColor: Palette.background,
+      ),
+      backgroundColor: Palette.background,
       body: Padding(
         padding: const EdgeInsets.all(100),
         child: Row(
@@ -84,25 +88,30 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
                     ],
                   ),
                 ),
-                Stack(
-                  children: [
-                    Positioned.fill(
-                      child: Image.asset(
-                        'assets/images/galaxy.jpg',
-                        fit: BoxFit.cover,
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(15),
+                      bottomLeft: Radius.circular(15)),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Image.asset(
+                          'assets/images/galaxy.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 800,
-                      height: 400,
-                      child: TerminalView(
-                        terminal,
-                        padding: const EdgeInsets.all(10),
-                        hardwareKeyboardOnly: true,
-                        backgroundOpacity: 0.5,
+                      SizedBox(
+                        width: 800,
+                        height: 400,
+                        child: TerminalView(
+                          terminal,
+                          padding: const EdgeInsets.all(10),
+                          hardwareKeyboardOnly: true,
+                          backgroundOpacity: 0.5,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

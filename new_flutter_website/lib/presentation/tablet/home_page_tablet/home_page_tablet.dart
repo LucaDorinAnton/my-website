@@ -8,16 +8,14 @@ import 'package:website/core/strings.dart';
 import 'package:website/core/widgets/pop_up_section.dart';
 import 'package:universal_html/html.dart' as html;
 
-class HomePageDesktop extends StatefulWidget {
-  const HomePageDesktop({super.key});
+class HomePageTablet extends StatefulWidget {
+  const HomePageTablet({super.key});
 
   @override
-  State<HomePageDesktop> createState() => _HomePageDesktopState();
+  State<HomePageTablet> createState() => _HomePageTabletState();
 }
 
-class _HomePageDesktopState extends State<HomePageDesktop> {
-  String email = "contact@ouiquit.com";
-
+class _HomePageTabletState extends State<HomePageTablet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -54,7 +54,7 @@ class CVSection extends StatelessWidget {
                   fontStyle: FontStyle.italic),
             ),
             SelectableText(
-              position,
+              location,
               style: GoogleFonts.patuaOne(
                 fontSize: 20,
                 fontWeight: FontWeight.w100,
