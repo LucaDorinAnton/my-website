@@ -118,8 +118,9 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
             SingleChildScrollView(
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.grey)),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey),
+                ),
                 width: 500,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

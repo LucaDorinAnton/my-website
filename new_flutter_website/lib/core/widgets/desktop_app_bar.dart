@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:website/core/palette.dart';
 import 'package:website/core/strings.dart';
 import 'package:go_router/go_router.dart';
@@ -49,10 +48,10 @@ class AppBarDesktop extends StatelessWidget {
                 const SizedBox(width: 100),
                 InkWell(
                   onTap: () {
-                    context.go('/normal_cv');
+                    context.go('/about');
                   },
                   child: Text(
-                    'Type-Faced CV',
+                    'About',
                     style: GoogleFonts.patuaOne(
                       color: Colors.white,
                       fontSize: 15,
@@ -65,7 +64,20 @@ class AppBarDesktop extends StatelessWidget {
                     context.go('/terminal_cv');
                   },
                   child: Text(
-                    'Interactive CV',
+                    'Portfolio',
+                    style: GoogleFonts.patuaOne(
+                      color: Colors.white,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 100),
+                InkWell(
+                  onTap: () {
+                    context.go('/terminal_cv');
+                  },
+                  child: Text(
+                    'Blog',
                     style: GoogleFonts.patuaOne(
                       color: Colors.white,
                       fontSize: 15,
@@ -75,9 +87,10 @@ class AppBarDesktop extends StatelessWidget {
               ],
             ),
             InkWell(
-              onTap: () async {
-                await canLaunchUrl(Strings.params);
-                launchUrl(Strings.params);
+              onTap: () {
+                context.go('/contact_me');
+                // await canLaunchUrl(Strings.params);
+                // launchUrl(Strings.params);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
