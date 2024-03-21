@@ -6,13 +6,10 @@ import 'package:website/core/widgets/desktop_app_bar.dart';
 class ContactMeDesktop extends StatelessWidget {
   const ContactMeDesktop({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      backgroundColor: Palette.lightOrange,
+      backgroundColor: Palette.background,
       appBar: AppBar(
         flexibleSpace: const AppBarDesktop(),
         backgroundColor: Palette.background,
