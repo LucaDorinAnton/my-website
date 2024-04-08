@@ -5,23 +5,116 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:website/core/palette.dart';
 import 'package:website/core/strings.dart';
 import 'package:universal_html/html.dart' as html;
-import 'package:website/core/widgets/desktop_app_bar.dart';
+// import 'package:website/core/widgets/desktop_app_bar.dart';
 import 'package:website/core/widgets/pop_up_section.dart';
 
-class HomePageDesktop extends StatefulWidget {
-  const HomePageDesktop({super.key});
+class HomePageMobile extends StatefulWidget {
+  const HomePageMobile({super.key});
 
   @override
-  State<HomePageDesktop> createState() => _HomePageDesktopState();
+  State<HomePageMobile> createState() => _HomePageMobileState();
 }
 
-class _HomePageDesktopState extends State<HomePageDesktop> {
+class _HomePageMobileState extends State<HomePageMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette.background,
+      appBar: AppBar(
+        elevation: 0,
+        title: Text(
+          Strings.name,
+          style: GoogleFonts.patuaOne(
+            color: Colors.white,
+            fontSize: 24,
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Palette.lightOrange,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(Icons.close)),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                context.go('/');
+              },
+              leading: const Icon(FontAwesomeIcons.house),
+              title: const Text('Home'),
+            ),
+            ListTile(
+              onTap: () {
+                context.go('/about');
+              },
+              leading: const Icon(FontAwesomeIcons.person),
+              title: const Text('About'),
+            ),
+            ListTile(
+              onTap: () {
+                // context.go('/terminal_cv');
+              },
+              leading: const Icon(FontAwesomeIcons.file),
+              title: const Text('Portfolio'),
+            ),
+            ListTile(
+              onTap: () {
+                // context.go('/terminal_cv');
+              },
+              leading: const Icon(FontAwesomeIcons.blog),
+              title: const Text('Blog'),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            TextButton(
+              onPressed: () {
+                context.go('/contact_me');
+              },
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Palette.lightOrange,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Let's connect",
+                      style: GoogleFonts.patuaOne(
+                        color: Colors.white,
+                        fontSize: 24,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 4.0),
+                      child: Icon(
+                        Icons.arrow_forward_outlined,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 50, right: 100),
+        padding: const EdgeInsets.only(bottom: 50, right: 50),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -56,12 +149,8 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      appBar: AppBar(
-        flexibleSpace: const AppBarDesktop(),
-        backgroundColor: Palette.background,
-      ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 150.0, top: 200),
+        padding: const EdgeInsets.only(left: 50, top: 100),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -69,7 +158,7 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
               'Welcome to my portfolio!',
               style: GoogleFonts.patuaOne(
                 color: Colors.grey,
-                fontSize: 40,
+                fontSize: 30,
               ),
             ),
             SizedBox(
@@ -77,11 +166,11 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                 Strings.letsBuildGreatThingsTogheter,
                 style: GoogleFonts.patuaOne(
                   color: Colors.white,
-                  fontSize: 50,
+                  fontSize: 40,
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {
                 showDialog(
@@ -101,14 +190,16 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                           children: [
                             Text(
                               Strings.chooseHowYouDLikeToInteractWithCV,
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.patuaOne(
                                 color: Colors.black,
-                                fontSize: 15,
+                                fontSize: 20,
                                 fontWeight: FontWeight.w100,
                               ),
                             ),
                             const SizedBox(height: 20),
                             PopUpSection(
+                              isMobile: true,
                               section: Strings.typeFaced,
                               description: Strings.viewTheCVAsARegularDocument,
                               buttonText: Strings.viewTypeFacedCV,
@@ -118,6 +209,7 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                             ),
                             const SizedBox(height: 20),
                             PopUpSection(
+                              isMobile: true,
                               section: Strings.terminal,
                               description: Strings.discoverTheCV,
                               buttonText: Strings.viewTerminalCV,
@@ -127,6 +219,7 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                             ),
                             const SizedBox(height: 20),
                             PopUpSection(
+                              isMobile: true,
                               section: Strings.threeDExperience,
                               description: Strings.exploreA3DWorld,
                               buttonText: 'Coming soon',
@@ -150,24 +243,27 @@ class _HomePageDesktopState extends State<HomePageDesktop> {
                   ),
                 ),
               ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    Icons.keyboard_arrow_right,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                  const SizedBox(width: 10),
-                  Text(
-                    Strings.interactiveCV,
-                    style: GoogleFonts.patuaOne(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.keyboard_arrow_right,
                       color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w100,
+                      size: 30,
                     ),
-                  ),
-                ],
+                    const SizedBox(width: 10),
+                    Text(
+                      Strings.interactiveCV,
+                      style: GoogleFonts.patuaOne(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w100,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             )
           ],

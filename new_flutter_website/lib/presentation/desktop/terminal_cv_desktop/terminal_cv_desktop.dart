@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:website/core/palette.dart';
 import 'package:website/core/strings.dart';
 import 'package:website/core/widgets/desktop_app_bar.dart';
-import 'package:website/presentation/desktop/terminal_cv_desktop/mock_repl.dart';
+import 'package:website/core/widgets/mock_repl.dart';
 import 'package:xterm/xterm.dart';
 
 class TerminalCVDesktop extends StatefulWidget {
@@ -102,7 +102,7 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
                       ),
                       SizedBox(
                         width: 800,
-                        height: 400,
+                        height: 600,
                         child: TerminalView(
                           terminal,
                           padding: const EdgeInsets.all(10),
@@ -115,6 +115,15 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
                 ),
               ],
             ),
+            const SizedBox(width: 80),
+            const SizedBox(
+              height: 630,
+              child: VerticalDivider(
+                color: Colors.white,
+                thickness: 2,
+              ),
+            ),
+            const SizedBox(width: 80),
             SingleChildScrollView(
               child: Container(
                 decoration: BoxDecoration(

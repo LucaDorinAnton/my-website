@@ -6,15 +6,18 @@ class BulletPoint extends StatelessWidget {
     super.key,
     required this.text,
     this.isExpanded = true,
+    this.isMobile = false,
   });
 
   final String text;
   final bool isExpanded;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 30),
+      padding:
+          isMobile ? EdgeInsets.zero : const EdgeInsets.only(left: 30, right: 30),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
