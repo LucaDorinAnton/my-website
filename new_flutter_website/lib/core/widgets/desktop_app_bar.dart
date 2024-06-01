@@ -64,7 +64,7 @@ class AppBarDesktop extends StatelessWidget {
                 const SizedBox(width: 100),
                 InkWell(
                   onTap: () {
-                    context.go('/terminal_cv');
+                    context.go('/portfolio');
                   },
                   child: Text(
                     'Portfolio',
@@ -95,8 +95,6 @@ class AppBarDesktop extends StatelessWidget {
             InkWell(
               onTap: () {
                 context.go('/contact_me');
-                // await canLaunchUrl(Strings.params);
-                // launchUrl(Strings.params);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

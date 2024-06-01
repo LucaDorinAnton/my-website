@@ -48,7 +48,7 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
                         topRight: Radius.circular(15),
                         topLeft: Radius.circular(15)),
                   ),
-                  width: 800,
+                  width: 900,
                   height: 30,
                   child: Row(
                     children: [
@@ -101,7 +101,7 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
                         ),
                       ),
                       SizedBox(
-                        width: 800,
+                        width: 900,
                         height: 600,
                         child: TerminalView(
                           terminal,
@@ -130,12 +130,12 @@ class _TerminalCVDesktopState extends State<TerminalCVDesktop> {
                   color: Colors.white,
                   border: Border.all(color: Colors.grey),
                 ),
-                width: 500,
+                width: 600,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: 500,
+                      width: 600,
                       height: 50,
                       decoration: const BoxDecoration(
                         color: Palette.teal,

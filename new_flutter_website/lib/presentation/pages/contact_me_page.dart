@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:website/presentation/desktop/contact_me_desktop/contact_me_desktop.dart';
 import 'package:website/presentation/mobile/contact_me_mobile/contact_me_mobile.dart';
 
 class ContactMePage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _ExperienceCVState extends State<ContactMePage> {
       if (constraints.maxWidth < 1299) {
         return const ContactMeMobile();
       } else {
-        return const ContactMePage();
+        return const ContactMeDesktop();
       }
     });
   }

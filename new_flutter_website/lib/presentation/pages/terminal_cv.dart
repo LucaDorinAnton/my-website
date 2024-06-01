@@ -8,7 +8,7 @@ class TerminalCV extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth < 500) {
+      if (constraints.maxWidth < 1299) {
         return const TerminalCVMobile();
       } else {
         return const TerminalCVDesktop();
