@@ -18,17 +18,26 @@ class PortfolioCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 600,
-      width: double.infinity,
-      child: Card(
-        semanticContainer: true,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: SizedBox(
-          height: 100,
-          child: SingleChildScrollView(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+        ),
+        height: 800,
+        width: 800,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    image,
+                  ),
+                ),
                 ListTile(
                   leading: Icon(icon),
                   title: Text(title),
@@ -56,15 +65,6 @@ class PortfolioCard extends StatelessWidget {
                       child: const Text('Alt buton daca vrei'),
                     ),
                   ],
-                ),
-                SizedBox(
-                  width: double
-                      .infinity, // Makes the container take the full width
-                  child: Image.asset(
-                    image,
-                    fit: BoxFit
-                        .cover, // This ensures the image covers the available space
-                  ),
                 ),
               ],
             ),

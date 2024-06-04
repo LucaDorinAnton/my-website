@@ -71,14 +71,14 @@ class _TerminalCVMobileState extends State<TerminalCVMobile> {
             ),
             ListTile(
               onTap: () {
-                // context.go('/terminal_cv');
+                context.go('/portfolio');
               },
               leading: const Icon(FontAwesomeIcons.file),
               title: const Text('Portfolio'),
             ),
             ListTile(
               onTap: () {
-                // context.go('/terminal_cv');
+                context.go('/portfolio');
               },
               leading: const Icon(FontAwesomeIcons.blog),
               title: const Text('Blog'),
