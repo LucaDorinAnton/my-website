@@ -31,6 +31,9 @@ class AppBarDesktop extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              width: 30,
+            ),
             Row(
               children: [
                 InkWell(
@@ -41,7 +44,7 @@ class AppBarDesktop extends StatelessWidget {
                     'Home',
                     style: GoogleFonts.patuaOne(
                       color: Colors.white,
-                      fontSize: 15,
+                      fontSize: 20,
                     ),
                   ),
                 ),
@@ -54,20 +57,20 @@ class AppBarDesktop extends StatelessWidget {
                     'About',
                     style: GoogleFonts.patuaOne(
                       color: Colors.white,
-                      fontSize: 15,
+                      fontSize: 20,
                     ),
                   ),
                 ),
                 const SizedBox(width: 100),
                 InkWell(
                   onTap: () {
-                    context.go('/terminal_cv');
+                    context.go('/portfolio');
                   },
                   child: Text(
                     'Portfolio',
                     style: GoogleFonts.patuaOne(
                       color: Colors.white,
-                      fontSize: 15,
+                      fontSize: 20,
                     ),
                   ),
                 ),
@@ -80,17 +83,18 @@ class AppBarDesktop extends StatelessWidget {
                     'Blog',
                     style: GoogleFonts.patuaOne(
                       color: Colors.white,
-                      fontSize: 15,
+                      fontSize: 20,
                     ),
                   ),
                 ),
               ],
             ),
+            const SizedBox(
+              width: 30,
+            ),
             InkWell(
               onTap: () {
                 context.go('/contact_me');
-                // await canLaunchUrl(Strings.params);
-                // launchUrl(Strings.params);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

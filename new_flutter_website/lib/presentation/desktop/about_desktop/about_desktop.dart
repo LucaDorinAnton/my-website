@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:website/core/palette.dart';
 import 'package:website/core/widgets/desktop_app_bar.dart';
+import 'package:website/core/widgets/footer.dart';
 import 'package:website/core/widgets/image_and_text_section.dart';
 
 class AboutDesktop extends StatelessWidget {
@@ -11,6 +12,7 @@ class AboutDesktop extends StatelessWidget {
     return Scaffold(
       backgroundColor: Palette.background,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         flexibleSpace: const AppBarDesktop(),
         backgroundColor: Palette.background,
       ),
@@ -25,6 +27,7 @@ class AboutDesktop extends StatelessWidget {
             imageInLeft: false,
           ),
           SizedBox(height: 250),
+          Footer(),
         ],
       ),
     );
